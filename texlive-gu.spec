@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/gu
+# catalog-date 2008-08-21 09:38:31 +0200
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-gu
 Version:	20080821
 Release:	1
@@ -44,6 +50,7 @@ symmetry reduction are supported.
 %doc %{_texmfdistdir}/doc/latex/gu/gudemo.tex
 %doc %{_texmfdistdir}/doc/latex/gu/gudoc.pdf
 %doc %{_texmfdistdir}/doc/latex/gu/gudoc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ symmetry reduction are supported.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
