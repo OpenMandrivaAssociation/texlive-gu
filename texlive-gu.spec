@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-gu
 Version:	20080821
-Release:	7
+Release:	8
 Summary:	Typeset crystallographic group-subgroup-schemes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gu
