@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/gu
-# catalog-date 2008-08-21 09:38:31 +0200
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-gu
-Version:	20190228
+Version:	15878
 Release:	1
 Summary:	Typeset crystallographic group-subgroup-schemes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gu
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gu.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gu.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gu.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gu.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ calculated and the scheme is drawn. Currently two steps of
 symmetry reduction are supported.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,24 +38,10 @@ symmetry reduction are supported.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20080821-2
-+ Revision: 752452
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20080821-1
-+ Revision: 718590
-- texlive-gu
-- texlive-gu
-- texlive-gu
-- texlive-gu
-
